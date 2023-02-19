@@ -10,7 +10,7 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Add as AddIcon,
   DateRange,
@@ -20,6 +20,9 @@ import {
   VideoCameraBack,
 } from "@mui/icons-material";
 import { Box } from "@mui/system";
+import { UserAuth } from "../context/AuthContext";
+import { addDoc, collection } from "firebase/firestore";
+import { db, auth } from "../Firebase";
 
 const SytledModal = styled(Modal)({
   display: "flex",
@@ -36,11 +39,23 @@ const UserBox = styled(Box)({
 
 const Add = () => {
   const [open, setOpen] = useState(false);
+  const { user } = UserAuth();
+
+  // Post and Database stuff. //
+  const [postText, setPostText] = useState("");
+
+  const postCollectionRef = collection(db, "posts");
+  const createPost = async () => {
+    await addDoc(postCollectionRef, {postText, author: {name: user?.displayName, id: user?.uid, avatar: user?.photoURL, email: user?.email}, });
+    setOpen(false);
+  };
+
+  // END: Post and Database stuff. //
   return (
     <>
       <Tooltip
         onClick={(e) => setOpen(true)}
-        title="Delete"
+        title="Add Post"
         sx={{
           position: "fixed",
           bottom: 20,
@@ -70,11 +85,11 @@ const Add = () => {
           </Typography>
           <UserBox>
             <Avatar
-              src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              src={user?.photoURL}
               sx={{ width: 30, height: 30 }}
             />
             <Typography fontWeight={500} variant="span">
-              John Doe
+              {user?.displayName}
             </Typography>
           </UserBox>
           <TextField
@@ -84,6 +99,7 @@ const Add = () => {
             rows={3}
             placeholder="What's on your mind?"
             variant="standard"
+            onChange={(event) => {setPostText(event.target.value);}}
           />
           <Stack direction="row" gap={1} mt={2} mb={3}>
             <EmojiEmotions color="primary" />
@@ -96,7 +112,7 @@ const Add = () => {
             variant="contained"
             aria-label="outlined primary button group"
           >
-            <Button>Post</Button>
+            <Button onClick={createPost}>Post</Button>
             <Button sx={{ width: "100px" }}>
               <DateRange />
             </Button>
