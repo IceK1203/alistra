@@ -8,6 +8,7 @@ import Add from "../components/Add";
 import { useState } from "react";
 import { UserAuth } from '../context/AuthContext';
 import { Navigate } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 
 const Home = () => {
@@ -26,13 +27,14 @@ const Home = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <Box bgcolor={"background.default"} color={"text.primary"}>
-        <Navbar />
+        <Navbar /> 
         <Stack direction="row" spacing={2} justifyContent="space-between">
         <Sidebar setMode={setMode} mode={mode}/>
           <Feed />
           <Rightbar />
         </Stack>
         <Add />
+        <Footer />
       </Box>
     </ThemeProvider>
   )

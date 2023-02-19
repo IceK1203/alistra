@@ -32,7 +32,6 @@ useEffect(() => {
         <img className="logo" src={Logo} alt="logo" />
         <GoogleButton onClick={handleGoogleSignIn} />
       </form>
-      <Footer />
     </div>
   )
 }
