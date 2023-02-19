@@ -15,8 +15,8 @@ const Post = () => {
     <Card sx={{ margin: 5 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
-            R
+          <Avatar sx={{ bgcolor: "lightblue" }} aria-label="recipe">
+            J
           </Avatar>
         }
         action={
@@ -24,8 +24,8 @@ const Post = () => {
             <MoreVert />
           </IconButton>
         }
-        title="John Doe"
-        subheader="September 14, 2022"
+        title="James Placeholder"
+        subheader="James@Placeholder.com"
       />
       <CardMedia
         component="img"
@@ -35,9 +35,8 @@ const Post = () => {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+          This Text is just a placeholder put in by Rishan to fill the page when and if there
+           are no posts!
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

@@ -23,7 +23,13 @@ import { UserAuth } from "../context/AuthContext";
 
 
 const Sidebar = ({mode,setMode}) => {
+  // Permanent Dark Mode//
 
+  if (mode === "light") {
+    setMode("dark");
+  }
+  
+  // END: Permanent Dark Mode //
   return (
     <Box flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
       <Box position="fixed">
@@ -67,7 +73,7 @@ const Sidebar = ({mode,setMode}) => {
               <ListItemIcon>
                 <ModeNight />
               </ListItemIcon>
-              <Switch onChange={e=>setMode(mode === "light" ? "dark" : "light")}/>
+              <Switch onChange={e=>setMode(mode === "dark" ? "light" : "dark")}/>
             </ListItemButton>
           </ListItem>
         </List>
