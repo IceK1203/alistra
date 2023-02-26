@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 // Firebase Test Server
 
@@ -14,19 +15,21 @@ const firebaseConfig = {
 };
 
 // Firebase Production Server
-//const firebaseConfig = {
-  //apiKey: "AIzaSyDmiP7QUnrOuqojIquQBHDr8Nni-nm_HhI",
-  //authDomain: "alistra-96b8d.firebaseapp.com",
-  //projectId: "alistra-96b8d",
-  //storageBucket: "alistra-96b8d.appspot.com",
-  //messagingSenderId: "745264650134",
-  //appId: "1:745264650134:web:cee77edb5e8d885444afb7"
-//};
-
+/*
+const firebaseConfig = {
+  apiKey: "AIzaSyDmiP7QUnrOuqojIquQBHDr8Nni-nm_HhI",
+  authDomain: "alistra-96b8d.firebaseapp.com",
+  projectId: "alistra-96b8d",
+  storageBucket: "alistra-96b8d.appspot.com",
+  messagingSenderId: "745264650134",
+  appId: "1:745264650134:web:cee77edb5e8d885444afb7"
+};
+*/
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+export const storage = getStorage(app);
 
 //const provider = new GoogleAuthProvider();
 

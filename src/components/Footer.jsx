@@ -1,5 +1,5 @@
 import React from 'react';
-import "../footer.css";
+import "../css/footer.css";
 
 const Footer = () => {
   return (
@@ -9,7 +9,8 @@ const Footer = () => {
               &copy; Alistra
             </h3>
             <p>
-              Developed by Rishan Pancham
+              Built, concieved and developed by Rishan Pancham and Keanu (...) <br/>
+              Helping build the future in Technology and Education.
             </p>
         </footer>
     </div>

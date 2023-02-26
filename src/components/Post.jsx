@@ -10,33 +10,29 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
+import placeholderImage from "../img/placeholderImage.jpg";
+import placeholderAvatar from "../img/placeholderAvatar.jpg";
 const Post = () => {
   return (
     <Card sx={{ margin: 5 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: "lightblue" }} aria-label="recipe">
-            J
-          </Avatar>
+          <Avatar src={placeholderAvatar} sx={{ width: 40, height: 40 }}/>
         }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVert />
-          </IconButton>
-        }
-        title="James Placeholder"
-        subheader="James@Placeholder.com"
+        title="James Likter"
+        subheader="Jamie.lik@gmail.com"
       />
       <CardMedia
         component="img"
         height="20%"
-        image="https://images.pexels.com/photos/4534200/pexels-photo-4534200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        alt="Paella dish"
+        image={placeholderImage}
+        alt="Placeholder"
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This Text is just a placeholder put in by Rishan to fill the page when and if there
-           are no posts!
+        <Typography variant="body2" color="text.secondary" style={{fontSize: `20px`, marginLeft: `1rem`}}>
+          Still one of the most beautiful views of all time, just breathtaking. <br/>
+          Tokyo, Japan is a 10/10 must visit location. <br/>
+          I mean truly amazing
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

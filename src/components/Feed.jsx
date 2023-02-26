@@ -105,7 +105,6 @@ const Feed = () => {
             })}
           </div>
           <Post />
-          <Post />
         </>
       )}
     </Box>

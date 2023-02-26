@@ -51,6 +51,22 @@ const Add = () => {
   };
 
   // END: Post and Database stuff. //
+
+  // Image Storage stuff. //
+
+  /*
+  const [imageUpload, setImageUpload] = useState(null);
+  const uploadImage = () => {
+    console.log("Upload IMG")
+  };
+
+  const Run = () => {
+    createPost();
+    uploadImage();
+  }
+  */
+
+  // END: Image Storage stuff. //
   return (
     <>
       <Tooltip
@@ -81,7 +97,7 @@ const Add = () => {
           borderRadius={5}
         >
           <Typography variant="h6" color="gray" textAlign="center">
-            Create post
+            Post
           </Typography>
           <UserBox>
             <Avatar
@@ -101,11 +117,23 @@ const Add = () => {
             variant="standard"
             onChange={(event) => {setPostText(event.target.value);}}
           />
-          <Stack direction="row" gap={1} mt={2} mb={3}>
-            <EmojiEmotions color="primary" />
-            <Image color="secondary" />
-            <VideoCameraBack color="success" />
-            <PersonAdd color="error" />
+          <Stack direction="row" gap={0} mt={2} mb={2}>
+          <Button style={{ width:`5px`}}>
+              <EmojiEmotions color="primary" />
+          </Button>
+          <input
+            accept="image/*"
+            className="img-upload"
+            style={{ display: 'none' }}
+            id="raised-button-file"
+            multiple
+            type="file"
+          />
+          <label htmlFor="raised-button-file">
+            <Button variant="raised" component="span" className="img-upload-btn">
+              <Image color="secondary" />
+            </Button>
+          </label> 
           </Stack>
           <ButtonGroup
             fullWidth
@@ -113,9 +141,6 @@ const Add = () => {
             aria-label="outlined primary button group"
           >
             <Button onClick={createPost}>Post</Button>
-            <Button sx={{ width: "100px" }}>
-              <DateRange />
-            </Button>
           </ButtonGroup>
         </Box>
       </SytledModal>

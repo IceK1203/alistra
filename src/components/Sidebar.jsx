@@ -20,6 +20,7 @@ import {
 import React, { useEffect } from "react";
 import { auth } from '../Firebase';
 import { UserAuth } from "../context/AuthContext";
+import { useNavigate } from 'react-router-dom';
 
 
 const Sidebar = ({mode,setMode}) => {
@@ -28,21 +29,22 @@ const Sidebar = ({mode,setMode}) => {
   if (mode === "light") {
     setMode("dark");
   }
-  
   // END: Permanent Dark Mode //
+
+  const navigate = useNavigate();
+  const toProfile = () => navigate("/profile");
+
   return (
     <Box flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
       <Box position="fixed">
         <List>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="/home">
+            <ListItemButton component="a" href="/">
               <ListItemIcon>
                 <Home />
               </ListItemIcon>
               <ListItemText primary="Homepage" />
             </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton component="a" href="/">
@@ -53,13 +55,14 @@ const Sidebar = ({mode,setMode}) => {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="/profile">
+            <ListItemButton component="a" onClick={toProfile}>
               <ListItemIcon>
                 <AccountBox />
               </ListItemIcon>
               <ListItemText primary="Profile" />
             </ListItemButton>
           </ListItem>
+          {/*
           <ListItem disablePadding>
             <ListItemButton component="a" href="#simple-list">
               <ListItemIcon>
@@ -68,6 +71,7 @@ const Sidebar = ({mode,setMode}) => {
               <Switch onChange={e=>setMode(mode === "dark" ? "light" : "dark")}/>
             </ListItemButton>
           </ListItem>
+          */}
         </List>
       </Box>
     </Box>

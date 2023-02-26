@@ -24,7 +24,7 @@ import {
 import LockIcon from '@mui/icons-material/Lock';
 import React, { useState } from "react";
 import Logo from "../img/Logo.png";
-import "../imgSize.css";
+import "../css/imgSize.css";
 import { UserAuth } from "../context/AuthContext";
 import MenuIcon from '@mui/icons-material/Menu';
 import {
@@ -43,6 +43,8 @@ import {
   Settings,
   Storefront,
 } from "@mui/icons-material";
+import LogoutIcon from '@mui/icons-material/Logout';
+import { useNavigate } from "react-router-dom";
 
 
 const StyledToolbar = styled(Toolbar)({
@@ -55,7 +57,7 @@ const Search = styled("div")(({ theme }) => ({
   backgroundColor: "white",
   padding: "0 10px",
   borderRadius: theme.shape.borderRadius,
-  width: "40%",
+  width: "35%",
 }));
 
 const Icons = styled(Box)(({ theme }) => ({
@@ -94,6 +96,8 @@ const Navbar = () => {
     }
   }
   console.log(window.screen.width);
+  const navigate = useNavigate();
+  const toProfile = () => navigate("/profile");
   return (
     <>
     <AppBar position="sticky">
@@ -109,9 +113,13 @@ const Navbar = () => {
           <button
            onClick={handleSignOut} 
            style={{
-            fontSize: `16px`,
-            borderRadius: `5px`,
-            width: `68px`,
+            fontSize: `18px`,
+            borderRadius: `8px`,
+            borderColor: `white`,
+            width: `74px`,
+            background: `transparent`,
+            color: `white`,
+            fontWeight: `400`,
            }}
            >Logout</button>
           <Avatar
@@ -145,8 +153,8 @@ const Navbar = () => {
         <Box
           width={400}
           height={280}
-          bgcolor={"background.default"}
-          color={"text.primary"}
+          bgcolor={"#181414"}
+          color={"white"}
           p={3}
           borderRadius={5}
         >
@@ -164,9 +172,9 @@ const Navbar = () => {
           </UserBox>
           <List>
             <ListItem disablePadding>
-              <ListItemButton component="a" href="/home">
+              <ListItemButton component="a" href="/">
                 <ListItemIcon>
-                  <Home />
+                  <Home style={{color: "white"}}/>
                 </ListItemIcon>
                 <ListItemText primary="Homepage" />
               </ListItemButton>
@@ -174,18 +182,33 @@ const Navbar = () => {
             <ListItem disablePadding>
             <ListItemButton component="a" href="/">
               <ListItemIcon>
-                <Settings />
+                <Settings style={{color: "white"}}/>
               </ListItemIcon>
               <ListItemText primary="Settings" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="/profile">
+            <ListItemButton component="a" onClick={toProfile}>
               <ListItemIcon>
-                <AccountBox />
+                <AccountBox style={{color: "white"}}/>
               </ListItemIcon>
               <ListItemText primary="Profile" />
             </ListItemButton>
+          </ListItem>
+
+          <ListItem>
+            <ListItemButton
+            onClick={handleSignOut} 
+            style={{
+              fontSize: `18px`,
+              borderRadius: `8px`,
+              borderColor: `white`,
+              width: `80px`,
+              background: `#4c49494b`,
+              color: `white`,
+              fontWeight: `400`,
+            }}
+            ><LogoutIcon style={{paddingRight:"5px"}}/> Logout</ListItemButton>
           </ListItem>
           </List>
         </Box>

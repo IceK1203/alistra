@@ -1,0 +1,54 @@
+body {
+    background-color: #20bebe;
+}
+
+.center {
+    margin-top: 10%;
+    margin-left: 45%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #464646;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+
+  .container {
+    max-width: 280px;
+    margin: 0 auto;
+    text-align: center;
+ }
+
+.logo {
+  width: 240px;
+  height: auto;
+}
+
+  /* Style the form */
+form {
+   background-color: #fff;
+   padding: 20px;
+ border-radius: 10px;
+box-shadow: 0px 0px 10px #ccc;
+margin-top: 300px;
+}
+
+  /* Style the submit button */
+button{
+width: 100%;
+ padding: 10px;
+ color: black;
+border: none;
+ border-radius: 5px;
+font-size: 20px;
+cursor: pointer;
+}
+
+
+p {
+    font-size: 20px;
+}
