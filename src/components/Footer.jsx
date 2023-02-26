@@ -6,11 +6,10 @@ const Footer = () => {
     <div>
         <footer>
             <h3>
-              &copy; Alistra
+              &copy; Alistra <br /> <br />
             </h3>
             <p>
-              Built, concieved and developed by Rishan Pancham and Keanu (...) <br/>
-              Helping build the future in Technology and Education.
+              Rishan Pancham and Keanu Kromoredjo <br/>
             </p>
         </footer>
     </div>

@@ -112,7 +112,6 @@ const ProfilePage = () => {
                         Our service is intended for users who are at least 18 years old.<br/>
                         If you have any questions or concerns about these terms of service, please contact us.<br/>
                         </p>
-                        <Button style={{width:`20px`, height:`35px`, backgroundColor:`#4c49494b`}} href="/profile">  Accept </Button>
                     </Typography>
                 </Popover>
                 </div>

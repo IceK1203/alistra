@@ -125,7 +125,6 @@ const Navbar = () => {
           <Avatar
             sx={{ width: 30, height: 30 }}
             src={user?.photoURL}
-            onClick={(e) => setOpen(true)}
           />
           <Typography variant="span">{user?.displayName}</Typography>
         </Icons>

@@ -5,6 +5,12 @@ import { UserAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../img/Logo.png';
 import Footer from '../components/Footer';
+import Hero from "../img/hero-img.svg";
+import { styled } from '@mui/material/styles';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+
 
 
 const SignIn = () => {
@@ -28,7 +34,7 @@ useEffect(() => {
 
   return (
     <div className="container">
-      <form action="#" method="post">
+      <form action="#" method="post" style={{backgroundColor:`#181414`,}}>
         <img className="logo" src={Logo} alt="logo" />
         <GoogleButton onClick={handleGoogleSignIn} />
       </form>
