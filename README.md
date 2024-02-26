@@ -1,13 +1,7 @@
 # Alistra Social
 
-## Available Scripts
+## One of my proudest websites
 
-In the project directory, you can run:
+Alistra is a fully functional Social app with Account security, posting, settings, ect
+Created with React and Firebase July 2023
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
